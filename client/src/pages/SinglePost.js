@@ -13,7 +13,8 @@ const SinglePost = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { postId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_SINGLE_POST, {
+  const { loading, data } = useQuery(
+    QUERY_SINGLE_POST, {
     // pass URL parameter
     variables: { postId: postId },
   });

@@ -9,12 +9,18 @@ const typeDefs = gql`
     posts: [Post]!
   }
 
+  type Category {
+    _id: ID
+    name: String
+  }
+
   type Post {
     _id: ID
     postText: String
     postAuthor: String
     createdAt: String
     comments: [Comment]!
+    category: Category
   }
 
   type Comment {

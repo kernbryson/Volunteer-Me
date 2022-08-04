@@ -1,9 +1,11 @@
-const db = require('../config/connection');
-const { User, Post } = require('../models');
-const userSeeds = require('./userSeeds.json');
-const postSeeds = require('./postSeeds.json');
+const db = require("../config/connection");
+const { User, Post } = require("../models");
+const userSeeds = require("./userSeeds.json");
+const postSeeds = require("./postSeeds.json");
+const categorySeeds = require("./categorySeeds.json");
 
-db.once('open', async () => {
+db.once("open", async () => {
+  const categories = await Category.insertMany(categorySeeds[i]);
   try {
     await Post.deleteMany({});
     await User.deleteMany({});
@@ -26,6 +28,6 @@ db.once('open', async () => {
     process.exit(1);
   }
 
-  console.log('all done!');
+  console.log("all done!");
   process.exit(0);
 });

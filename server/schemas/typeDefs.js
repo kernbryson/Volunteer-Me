@@ -23,6 +23,11 @@ const typeDefs = gql`
     category: Category
   }
 
+  type VolunteerCart {
+   _id: ID
+    post: Post
+  }
+
   type Comment {
     _id: ID
     commentText: String
@@ -50,6 +55,8 @@ const typeDefs = gql`
     addComment(postId: ID!, commentText: String!): Post
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post
+    addVolunteerCart(cartID: ID!, commentId: ID!): Post
+    removeVolunteerCart(cartID: ID!, commentId: ID!): Post
   }
 `;
 

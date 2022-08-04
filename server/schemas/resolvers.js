@@ -114,6 +114,38 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    addVolunteerCart: async (parent, { postText }, context) => {
+      if (context.user) {
+        const cart = await VolunteerCart.create({
+          postText,
+          postAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { carts: cart._id } }
+        );
+
+        return cart;
+      }
+      throw new AuthenticationError("Login required.");
+    },
+    removeVolunteerCart: async (parent, { postId }, context) => {
+      if (context.user) {
+        const cart = await VolunteerCart.findOneAndDelete({
+          _id: cartId,
+          postAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { carts: cart._id } }
+        );
+
+        return cart;
+      }
+      throw new AuthenticationError("Login required.");
+    },
   },
 };
 

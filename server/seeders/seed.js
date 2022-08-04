@@ -5,7 +5,7 @@ const postSeeds = require("./postSeeds.json");
 const categorySeeds = require("./categorySeeds.json");
 
 db.once("open", async () => {
-  const categories = await Category.insertMany(categorySeeds[i]);
+
   try {
     await Post.deleteMany({});
     await User.deleteMany({});

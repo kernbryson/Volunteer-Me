@@ -114,10 +114,16 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    addVolunteerCart: async (parent, { postText }, context) => {
+    addRSVP: async (parent, { postText }, context) => {
       if (context.user) {
-        const cart = await VolunteerCart.create({
+        const cart = await Rsvp.create({
           postText,
+          icon,
+          volunteerDate,
+          location,
+          time,
+          contact,
+          category,
           postAuthor: context.user.username,
         });
 
@@ -130,9 +136,9 @@ const resolvers = {
       }
       throw new AuthenticationError("Login required.");
     },
-    removeVolunteerCart: async (parent, { postId }, context) => {
+    removeRSVP: async (parent, { postId }, context) => {
       if (context.user) {
-        const cart = await VolunteerCart.findOneAndDelete({
+        const cart = await Rsvp.findOneAndDelete({
           _id: cartId,
           postAuthor: context.user.username,
         });

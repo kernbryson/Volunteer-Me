@@ -7,6 +7,7 @@ const typeDefs = gql`
     email: String
     password: String
     posts: [Post]!
+    rsvp: Rsvp
   }
 
   type Category {
@@ -21,9 +22,14 @@ const typeDefs = gql`
     createdAt: String
     comments: [Comment]!
     category: Category
+    icon: String
+    volunteerDate: String
+    location: String
+    time:String
+    contact:Int
   }
 
-  type VolunteerCart {
+  type Rsvp {
    _id: ID
     post: Post
   }
@@ -55,8 +61,8 @@ const typeDefs = gql`
     addComment(postId: ID!, commentText: String!): Post
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post
-    addVolunteerCart(cartID: ID!, commentId: ID!): Post
-    removeVolunteerCart(cartID: ID!, commentId: ID!): Post
+    addRSVP(cartID: ID!, commentId: ID!): Post
+    removeRSVP(cartID: ID!, commentId: ID!): Post
   }
 `;
 

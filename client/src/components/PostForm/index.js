@@ -6,6 +6,12 @@ import { ADD_POST } from "../../utils/mutations";
 import { QUERY_POSTS, QUERY_ME } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
+const styles = {
+  cardStyles: {
+    width: "12vw",
+    margin: "10px",
+  },
+};
 
 const PostForm = () => {
   const [postText, setPostText] = useState("");
@@ -62,7 +68,7 @@ const PostForm = () => {
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>Explain what kind of volunteer work you will be doing</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -80,12 +86,50 @@ const PostForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="postText"
-                placeholder="Here's a new post..."
+                placeholder="Give a little information about the volunteer work"
                 value={postText}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
               ></textarea>
+              <div class="row">
+                <select
+                  style={styles.cardStyles}
+                  class="form-select w-10"
+                  id="floatingSelect"
+                  aria-label="Floating label select example"
+                >
+                  <option selected>Category</option>
+                  <option value="1">Homeless</option>
+                  <option value="2">Environmental</option>
+                  <option value="3">Animal Shelter</option>
+                </select>
+
+                <input
+                  style={styles.cardStyles}
+                  type="contact"
+                  class="form-control"
+                  id="floatingInputValue"
+                  placeholder="Contact"
+                  value="Contact"
+                />
+                <input
+                  style={styles.cardStyles}
+                  type="date"
+                  class="form-control"
+                  id="floatingInputValue"
+                  placeholder="Date"
+                  value="Date"
+                />
+                <input
+                  style={styles.cardStyles}
+                  type="address"
+                  class="form-control"
+                  id="floatingInputValue"
+                  placeholder="Address"
+                  value="Address"
+                />
+              </div>
             </div>
 
             <div className="col-12 col-lg-3">

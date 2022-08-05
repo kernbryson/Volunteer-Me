@@ -7,6 +7,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 import Home from './pages/Home';
 import Signup from './pages/Signup';
@@ -14,6 +15,7 @@ import Login from './pages/Login';
 import SingleThought from './pages/SingleThought';
 import Profile from './pages/Profile';
 import Header from './components/Header';
+// import ResponsiveAppBar from './components/Header/index2';
 import Footer from './components/Footer';
 
 // Construct our main GraphQL API endpoint
@@ -47,6 +49,7 @@ function App() {
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
+          <Button variant="contained">Hello World</Button>;
             <Routes>
               <Route 
                 path="/"

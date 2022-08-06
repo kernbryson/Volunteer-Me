@@ -1,4 +1,13 @@
-import React from "react";
+
+import React from 'react';
+import { Grid, Link } from "@mui/material";
+
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+
 
 // Import the `useParams()` hook
 import { useParams } from "react-router-dom";
@@ -20,14 +29,51 @@ const SinglePost = () => {
   console.log(data);
   const post = data?.post || {};
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
   return (
+    <div>
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <Card sx={{ minWidth: 275 }}>
+          <CardContent>
+            <Typography
+              variant="h5"
+            >
+              Plant trees in Oakhurst
+            </Typography>
+            
+            <Typography variant="body2">
+              We need 5-10 people this Saturday to come help plant trees
+            </Typography>
+            <Typography variant="body2">
+              Put much more info here such as potentiall:
+              <ul>date</ul>
+              <ul>ability to sign up</ul>
+              <ul>map</ul>
+              <ul>dontate</ul>
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Link href="/">
+            
+            <Button size="small">Donate</Button>
+            </Link>
+          </CardActions>
+        </Card>
+      </Grid>
+
+    </Grid>
+  {/* </div> */}
     <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0">
+      {/* <h3 className="card-header bg-dark text-light p-2 m-0">
         {post.postAuthor} <br />
+
+
+
         <span style={{ fontSize: "1rem" }}>posted on {post.createdAt}</span>
+
       </h3>
       <div className="bg-light py-4">
         <blockquote
@@ -41,7 +87,7 @@ const SinglePost = () => {
         >
           {post.postText}, {post.location}
         </blockquote>
-      </div>
+      </div> */}
 
       <div className="my-5">
         <CommentList comments={post.comments} />
@@ -49,6 +95,7 @@ const SinglePost = () => {
       <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}>
         <CommentForm postId={post._id} />
       </div>
+    </div>
     </div>
   );
 };

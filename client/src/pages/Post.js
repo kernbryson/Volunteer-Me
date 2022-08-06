@@ -13,7 +13,9 @@ import PostList from "../components/PostList";
 import PostForm from "../components/PostForm";
 
 
-const Activity = () => {
+
+
+const Post = () => {
   return (
     <div>
       <Grid container spacing={3}>
@@ -78,4 +80,4 @@ const Activity = () => {
 //   );
 // };
 
-export default Activity;
+export default Post;

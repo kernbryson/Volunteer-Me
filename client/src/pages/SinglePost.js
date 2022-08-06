@@ -41,7 +41,12 @@ const SinglePost = () => {
             <Typography
               variant="h5"
             >
-              Plant trees in Oakhurst
+              {post.postText}, {post.location}
+              <p>{post.location}</p>
+              <p>{post.category}</p>
+              <p>{post.time}</p>
+              <p>{post.contact}</p>
+              <p>{post.volunteerDate}</p>
             </Typography>
             
             <Typography variant="body2">

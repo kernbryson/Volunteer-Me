@@ -37,6 +37,7 @@ const CommentForm = ({ postId }) => {
       setCommentText(value);
       setCharacterCount(value.length);
     }
+  
   };
 
   return (

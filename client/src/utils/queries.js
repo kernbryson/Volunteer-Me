@@ -22,6 +22,10 @@ export const QUERY_POSTS = gql`
       postText
       postAuthor
       createdAt
+      location
+      contact
+      time
+      volunteerDate
     }
   }
 `;
@@ -31,6 +35,10 @@ export const QUERY_SINGLE_POST = gql`
     post(postId: $postId) {
       _id
       postText
+      location
+      contact
+      time
+      volunteerDate
       postAuthor
       createdAt
       comments {

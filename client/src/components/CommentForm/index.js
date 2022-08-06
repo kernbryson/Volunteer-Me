@@ -37,11 +37,12 @@ const CommentForm = ({ postId }) => {
       setCommentText(value);
       setCharacterCount(value.length);
     }
+  
   };
 
   return (
     <div>
-      <h4>What are your thoughts on this post?</h4>
+      <h4>What are your thoughts on this activity?</h4>
 
       {Auth.loggedIn() ? (
         <>

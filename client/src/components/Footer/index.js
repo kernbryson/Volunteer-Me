@@ -5,7 +5,9 @@ const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-    <footer className="w-100 mt-auto bg-secondary p-4">
+    // <footer className="w-100 mt-auto bg-secondary p-4">
+    <footer className="w-100 mt-auto bg-footer p-4">
+  
       <div className="container text-center mb-5">
         {location.pathname !== '/' && (
           <button
@@ -16,7 +18,8 @@ const Footer = () => {
           </button>
         )}
         <h4>
-          Made with{' '}
+          Don't get Voluntold... VolunteerMe!
+          {/* Made with{' '}
           <span
             className="emoji"
             role="img"
@@ -25,7 +28,7 @@ const Footer = () => {
           >
             ❤️
           </span>{' '}
-          by the Tech Thoughts team.
+          by the Tech Thoughts team. */}
         </h4>
       </div>
     </footer>

@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Home2 from './pages/Home2';
-import Activity from './pages/Activity';
+import SinglePost2 from './pages/SinglePost2';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import SinglePost from './pages/SinglePost';
@@ -52,7 +52,7 @@ function App() {
             <Routes>
               <Route 
                 path="/"
-                element={<Home2 />}
+                element={<Home />}
               />
               <Route 
                 path="/login"
@@ -67,8 +67,8 @@ function App() {
                 element={<Profile />}
               />
               <Route 
-                path="/activity"
-                element={<Activity />}
+                path="/singlepost2"
+                element={<SinglePost2 />}
               />
               <Route 
                 path="/profiles/:username"

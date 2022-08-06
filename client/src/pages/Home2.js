@@ -26,7 +26,7 @@ const Home2 = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Link href="/Activity">
+              <Link href="/singlepost2">
                 <Button size="small">Learn More</Button>
               </Link>
             </CardActions>

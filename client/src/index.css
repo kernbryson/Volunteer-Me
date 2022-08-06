@@ -927,6 +927,14 @@ a:hover {
   background-color: #1bbc9b !important;
 }
 
+.bg-body {
+  background-color: #84a98c !important;
+}
+
+.bg-footer {
+  background-color: #cad2c5 !important;
+}
+
 .bg-danger {
   background-color: #e64c66 !important;
 }

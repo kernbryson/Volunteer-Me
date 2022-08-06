@@ -14,7 +14,13 @@ const styles = {
 };
 
 const PostForm = () => {
-  const [postText, setPostText] = useState("");
+  const [postForm, setPostForm] = useState({
+    postText: "",
+    location: "",
+    contact: "",
+    time: "",
+    volunteerDate: "",
+  });
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -46,24 +52,30 @@ const PostForm = () => {
     try {
       const { data } = await addPost({
         variables: {
-          postText,
-          postAuthor: Auth.getProfile().data.username,
+          postText: postForm.postText,
+          location: postForm.location,
+          contact: postForm.contact,
+          time: postForm.time,
+          volunteerDate: postForm.volunteerDate,
         },
       });
-
-      setPostText("");
+      setPostForm({
+        postText: "",
+        location: "",
+        contact: "",
+        time: "",
+        volunteerDat: "",
+      });
     } catch (err) {
       console.error(err);
     }
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    if (name === "postText" && value.length <= 280) {
-      setPostText(value);
-      setCharacterCount(value.length);
-    }
+    const element = event.target;
+    const temp = {};
+    temp[element.name] = element.value;
+    setPostForm({ ...postForm, ...temp });
   };
 
   return (
@@ -87,7 +99,7 @@ const PostForm = () => {
               <textarea
                 name="postText"
                 placeholder="Give a little information about the volunteer work"
-                value={postText}
+                value={postForm.postText}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
@@ -95,40 +107,56 @@ const PostForm = () => {
               <div class="row">
                 <select
                   style={styles.cardStyles}
-                  class="form-select w-10"
+                  className="form-select w-10"
                   id="floatingSelect"
                   aria-label="Floating label select example"
                 >
-                  <option selected>Category</option>
+                  <option defaultValue>Category</option>
                   <option value="1">Homeless</option>
                   <option value="2">Environmental</option>
                   <option value="3">Animal Shelter</option>
                 </select>
 
                 <input
+                  className="form-input w-15"
+                  type="search"
                   style={styles.cardStyles}
-                  type="contact"
-                  class="form-control"
-                  id="floatingInputValue"
-                  placeholder="Contact"
-                  value="Contact"
-                />
+                  placeholder="location"
+                  aria-label="Search"
+                  onChange={handleChange}
+                  name="location"
+                  value={postForm.location}
+                ></input>
                 <input
+                  className="form-input w-15"
+                  type="search"
                   style={styles.cardStyles}
-                  type="date"
-                  class="form-control"
-                  id="floatingInputValue"
-                  placeholder="Date"
-                  value="Date"
-                />
+                  placeholder="Volunteer date"
+                  aria-label="Search"
+                  onChange={handleChange}
+                  name="volunteerDate"
+                  value={postForm.volunteerDate}
+                ></input>
                 <input
+                  className="form-input w-15"
+                  type="search"
                   style={styles.cardStyles}
-                  type="address"
-                  class="form-control"
-                  id="floatingInputValue"
-                  placeholder="Address"
-                  value="Address"
-                />
+                  placeholder="time"
+                  aria-label="Search"
+                  onChange={handleChange}
+                  name="time"
+                  value={postForm.time}
+                ></input>
+                <input
+                  className="form-input w-15"
+                  type="search"
+                  style={styles.cardStyles}
+                  placeholder="Phone number "
+                  aria-label="Search"
+                  onChange={handleChange}
+                  name="contact"
+                  value={postForm.contact}
+                ></input>
               </div>
             </div>
 

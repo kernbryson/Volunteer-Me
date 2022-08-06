@@ -15,6 +15,7 @@ const resolvers = {
       return Post.find(params).sort({ createdAt: -1 });
     },
     post: async (parent, { postId }) => {
+      console.log(Post.findOne({ _id: postId }));
       return Post.findOne({ _id: postId });
     },
     me: async (parent, args, context) => {
@@ -48,10 +49,18 @@ const resolvers = {
 
       return { token, user };
     },
-    addPost: async (parent, { postText }, context) => {
+    addPost: async (
+      parent,
+      { postText, location, contact, time, volunteerDate },
+      context
+    ) => {
       if (context.user) {
         const post = await Post.create({
           postText,
+          location,
+          contact,
+          time,
+          volunteerDate,
           postAuthor: context.user.username,
         });
 

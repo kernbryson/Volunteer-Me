@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
@@ -25,12 +25,12 @@ const typeDefs = gql`
     icon: String
     volunteerDate: String
     location: String
-    time:String
-    contact:Int
+    time: String
+    contact: String
   }
 
   type Rsvp {
-   _id: ID
+    _id: ID
     post: Post
   }
 
@@ -57,7 +57,13 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addPost(postText: String!): Post
+    addPost(
+      postText: String!
+      location: String!
+      contact: String!
+      time: String!
+      volunteerDate: String!
+    ): Post
     addComment(postId: ID!, commentText: String!): Post
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post

@@ -1,22 +1,20 @@
-
 import React from 'react';
-import { Grid, Link } from "@mui/material";
+import { Grid, Link } from '@mui/material';
 
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 // Import the `useParams()` hook
-import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
 
-import CommentList from "../components/CommentList";
-import CommentForm from "../components/CommentForm";
+import CommentList from '../components/CommentList';
+import CommentForm from '../components/CommentForm';
 
-import { QUERY_SINGLE_POST } from "../utils/queries";
+import { QUERY_SINGLE_POST } from '../utils/queries';
 
 const SinglePost = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
@@ -34,40 +32,70 @@ const SinglePost = () => {
   // }
   return (
     <div>
-    <Grid container spacing={3}>
-      <Grid item xs={12}>
-        <Card sx={{ minWidth: 275 }}>
-          <CardContent>
-            <Typography
+
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Card sx={{ minWidth: 275 }}>
+            <CardContent>
+              <Typography variant='h5'>Plant trees in Oakhurst</Typography>
+
+              <Typography variant='body2'>
+                We need 5-10 people this Saturday to come help plant trees
+              </Typography>
+              <Typography variant='body2'>
+                Put much more info here such as potentiall:
+                <ul>date</ul>
+                <ul>ability to sign up</ul>
+                <ul>map</ul>
+                <ul>dontate</ul>
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Link href='/'>
+                <Button size='small'>Donate</Button>
+              </Link>
+            </CardActions>
+          </Card>
+        </Grid>
+//old code
+    //<Grid container spacing={3}>
+      //<Grid item xs={12}>
+        //<Card sx={{ minWidth: 275 }}>
+          //<CardContent>
+            //<Typography
               variant="h5"
             >
-              Plant trees in Oakhurst
-            </Typography>
+              //{post.postText}, {post.location}
+              //<p>{post.location}</p>
+              //<p>{post.category}</p>
+              //<p>{post.time}</p>
+              //<p>{post.contact}</p>
+              //<p>{post.volunteerDate}</p>
+            //</Typography>
             
-            <Typography variant="body2">
+            //<Typography variant="body2">
               We need 5-10 people this Saturday to come help plant trees
-            </Typography>
-            <Typography variant="body2">
+            //</Typography>
+            //<Typography variant="body2">
               Put much more info here such as potentiall:
-              <ul>date</ul>
-              <ul>ability to sign up</ul>
-              <ul>map</ul>
-              <ul>dontate</ul>
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Link href="/">
+              //<ul>date</ul>
+              //<ul>ability to sign up</ul>
+              //<ul>map</ul>
+              //<ul>dontate</ul>
+            //</Typography>
+          //</CardContent>
+         //<CardActions>
+            //<Link href="/">
             
-            <Button size="small">Donate</Button>
-            </Link>
-          </CardActions>
-        </Card>
+            //<Button size="small">Donate</Button>
+            //</Link>
+          //</CardActions>
+        //</Card>
+//old code end
       </Grid>
-
-    </Grid>
-  {/* </div> */}
-    <div className="my-3">
-      {/* <h3 className="card-header bg-dark text-light p-2 m-0">
+      {/* </div> */}
+      <div className='my-3'>
+        {/* <h3 className="card-header bg-dark text-light p-2 m-0">
         {post.postAuthor} <br />
 
 
@@ -89,13 +117,13 @@ const SinglePost = () => {
         </blockquote>
       </div> */}
 
-      <div className="my-5">
-        <CommentList comments={post.comments} />
-      </div>
-      <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}>
+        <div className='my-5'>
+          <CommentList comments={post.comments} />
+        </div>
+        {/* <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}> */}
         <CommentForm postId={post._id} />
+        {/* </div> */}
       </div>
-    </div>
     </div>
   );
 };

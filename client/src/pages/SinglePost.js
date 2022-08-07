@@ -32,6 +32,7 @@ const SinglePost = () => {
   // }
   return (
     <div>
+
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Card sx={{ minWidth: 275 }}>
@@ -56,6 +57,41 @@ const SinglePost = () => {
             </CardActions>
           </Card>
         </Grid>
+//old code
+    //<Grid container spacing={3}>
+      //<Grid item xs={12}>
+        //<Card sx={{ minWidth: 275 }}>
+          //<CardContent>
+            //<Typography
+              variant="h5"
+            >
+              //{post.postText}, {post.location}
+              //<p>{post.location}</p>
+              //<p>{post.category}</p>
+              //<p>{post.time}</p>
+              //<p>{post.contact}</p>
+              //<p>{post.volunteerDate}</p>
+            //</Typography>
+            
+            //<Typography variant="body2">
+              We need 5-10 people this Saturday to come help plant trees
+            //</Typography>
+            //<Typography variant="body2">
+              Put much more info here such as potentiall:
+              //<ul>date</ul>
+              //<ul>ability to sign up</ul>
+              //<ul>map</ul>
+              //<ul>dontate</ul>
+            //</Typography>
+          //</CardContent>
+         //<CardActions>
+            //<Link href="/">
+            
+            //<Button size="small">Donate</Button>
+            //</Link>
+          //</CardActions>
+        //</Card>
+//old code end
       </Grid>
       {/* </div> */}
       <div className='my-3'>

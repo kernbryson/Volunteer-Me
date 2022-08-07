@@ -17,19 +17,20 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
       {posts &&
         posts.map((post) => (
           <Grid key={post._id} container spacing={3}>
-            <Grid item xs={12} md={6} lg={4}>
+            <Grid item xs={12} md={6} lg={8} m={2}>
               <Card sx={{ minWidth: 275 }}>
                 <CardContent>
                   <Typography variant="h5">
                     {" "}
                     {showUsername ? (
-                      <Link
-                        className="text-light"
-                        to={`/profiles/${post.postAuthor}`}
-                      >
+                      <Link className="" to={`/profiles/${post.postAuthor}`}>
                         {post.postAuthor} <br />
                         <span style={{ fontSize: "1rem" }}>
-                          created this post on {post.createdAt}
+                          Volunteer Date: {post.volunteerDate}
+                        </span>
+                        <br />
+                        <span style={{ fontSize: "1rem" }}>
+                          Volunteer Time: {post.time}
                         </span>
                       </Link>
                     ) : (
@@ -44,11 +45,7 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
 
                   <Typography variant="body2">
                     <p>{post.postText}</p>
-                    <p>{post.location}</p>
-                    <p>{post.category}</p>
-                    <p>{post.time}</p>
-                    <p>{post.contact}</p>
-                    <p>{post.volunteerDate}</p>
+              
                   </Typography>
                 </CardContent>
                 <CardActions>
@@ -56,7 +53,7 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
                     className="btn btn-primary btn-block btn-squared"
                     to={`/posts/${post._id}`}
                   >
-                    Join the discussion on this post.
+                    Learn more
                   </Link>
                 </CardActions>
               </Card>

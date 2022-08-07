@@ -53,9 +53,8 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/me" element={<Profile />} />
-              <Route path="/singlepost2" element={<SinglePost2 />} />
               <Route path="/profiles/:username" element={<Profile />} />
-              <Route path="/post/:postId" element={<SinglePost />} />
+              <Route path="/posts/:postId" element={<SinglePost />} />
             </Routes>
           </div>
           <Footer />

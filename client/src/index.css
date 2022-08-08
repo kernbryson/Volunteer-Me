@@ -369,9 +369,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'JetBrains Mono', monospace;
+  /* font-family: 'JetBrains Mono', monospace;
   margin: 0 0 0.5rem;
-  line-height: 1.25;
+  line-height: 1.25; */
 }
 
 h1 {
@@ -919,6 +919,10 @@ a:hover {
 }
 
 /* BACKGROUND UTILS */
+.bg-commentlist {
+  background-color: #344e41 !important;
+}
+
 .bg-primary {
   background-color: #2d3e50 !important;
 }

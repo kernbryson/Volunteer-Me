@@ -41,53 +41,63 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-            )}
+    <div className="row row-cols-1 row-cols-lg-1 ">
 
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </main>
+  
+  
+    <div className="col mb-4 py-4 " >
+        <div className="container  h-100">
+       <div className="row d-flex justify-content-center  h-100">
+         <div className="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11">
+           <div className="card shadow-2-strong">
+           {data ? (
+                  <p>
+                    Success! You may now head{' '}
+                    <Link to="/">back to the homepage.</Link>
+                  </p>
+                ) : (
+             <form className="card-body p-5 text-center signup-form" onSubmit={handleFormSubmit}>
+         
+               <h3 className="mb-5">Log In</h3>
+            
+               <div className="form-outline mb-2">
+                 <input className="form-control form-control-lg"  
+                   placeholder="Your email"
+                   name="email"
+                   type="email"
+                   value={formState.email}
+                   onChange={handleChange} />
+                 <label className="form-label" for="typeEmailX-2">Email</label>
+               </div>
+            
+               <div className="form-outline mb-4">
+                 <input   className="form-control form-control-lg"   
+                   placeholder="******"
+                   name="password"
+                   type="password"
+                   value={formState.password}
+                   onChange={handleChange} />
+                 <label className="form-label" for="typePasswordX-2">Password</label>
+               </div>
+           
+     
+               <button className="btn btn-secondary btn-lg btn-block" type="submit">Create your acccount</button>
+             </form>
+             )}
+              {error && (
+                  <div className="my-3 p-3 bg-danger text-white">
+                    {error.message}
+                  </div>
+                )}
+           </div>
+         </div>
+       </div>
+       </div>
+     </div>
+    
+    
+    
+     </div>
   );
 };
 

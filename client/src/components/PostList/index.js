@@ -12,6 +12,7 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
     return <h3>No Posts Yet</h3>;
   }
   return (
+
     <div className="flex-row">
       <h3>Current Activity Listings:</h3>
       <Grid container spacing={3}>
@@ -38,6 +39,7 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
             </Grid>
           ))}
         ;
+
       </Grid>
     </div>
   );

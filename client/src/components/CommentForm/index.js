@@ -33,7 +33,7 @@ const CommentForm = ({ postId }) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'commentText' && value.length <= 280) {
+    if (name === 'commentText' && value.length <= 700) {
       setCommentText(value);
       setCharacterCount(value.length);
     }
@@ -48,7 +48,7 @@ const CommentForm = ({ postId }) => {
         <>
           <p
             className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
+              characterCount === 700 || error ? 'text-danger' : ''
             }`}
           >
             {error && <span className="ml-2">{error.message}</span>}

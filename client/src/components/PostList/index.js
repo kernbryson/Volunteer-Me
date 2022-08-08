@@ -29,7 +29,7 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
                   <span style={{ fontSize: "1rem" }}>
                     Volunteer Date: {post.volunteerDate}
                   </span>
-                  <span style={{ fontSize: "1rem" }}>
+                  <span className="float-end" style={{ fontSize: "1rem" }}>
                     Volunteer Time: {post.time}
                   </span>
                 </Link>
@@ -45,10 +45,7 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
               <Typography variant="body2">
               <p>{post.postText}</p>
               <p>{post.category}</p>
-              
-              <p>{post.time}</p>
-              <p className="float-end">{post.contact}</p>
-             
+
               </Typography>
             </CardContent>
             <CardActions>

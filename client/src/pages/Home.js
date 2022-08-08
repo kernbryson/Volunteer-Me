@@ -8,7 +8,9 @@ const Home = () => {
   const posts = data?.posts || [];
 
   return (
+    
     <main>
+      
       <div className="">
         <div className="">
           {loading ? (
@@ -17,9 +19,11 @@ const Home = () => {
             <PostList posts={posts} title="Some Feed for Post(s)..." />
           )}
         </div>
+        
       </div>
+      
     </main>
-  );
+  )
 };
 
 export default Home;

@@ -21,13 +21,16 @@ body {
   margin: 0;
 }
 
+/* main div {
+  display: inline-flex;
+} */
+
 /**
  * Render the `main` element consistently in IE.
  */
 main {
   display: block;
 }
-
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -964,6 +967,11 @@ a:hover {
 }
 
 /* DISPLAY */
+
+.flexie {
+  display: flex;  
+  flex-wrap: wrap;
+}
 .display-none {
   display: none !important;
 }
@@ -1176,7 +1184,7 @@ form [type='radio'] {
 
 label form [type='checkbox'],
 label form [type='radio'] {
-  display: inline-block;
+  display: inline;
 }
 
 .container {
@@ -1184,6 +1192,7 @@ label form [type='radio'] {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
 }
 
 .container.container-fluid {

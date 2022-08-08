@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 import { Grid } from "@mui/material";
 import Card from "@mui/material/Card";
@@ -11,44 +11,59 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;
   }
-
   return (
     <div>
       {showTitle && <h3>{title}</h3>}
       {posts &&
         posts.map((post) => (
-          <div key={post._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
-              {showUsername ? (
+      <Grid key={post._id} container spacing={3}>
+        <Grid item xs={12} md={6} lg={10} m={3}>
+          <Card sx={{ minWidth: 275 }}>
+            <CardContent>
+              <Typography variant="h5"> {showUsername ? (
                 <Link
-                  className="text-light"
+                  className=""
                   to={`/profiles/${post.postAuthor}`}
                 >
                   {post.postAuthor} <br />
-                  <span style={{ fontSize: '1rem' }}>
-                    created this post on {post.createdAt}
+                  <span style={{ fontSize: "1rem" }}>
+                    Volunteer Date: {post.volunteerDate}
+                  </span>
+                  <span style={{ fontSize: "1rem" }}>
+                    Volunteer Time: {post.time}
                   </span>
                 </Link>
-              ) : (
-                <>
-                  <span style={{ fontSize: '1rem' }}>
-                    You created this post on {post.createdAt}
-                  </span>
-                </>
-              )}
-            </h4>
-            <div className="card-body bg-light p-2">
+                 ) : (
+                  <>
+                    <span style={{ fontSize: "1rem" }}>
+                      You created this post on {post.createdAt}
+                    </span>
+                  </>
+                )};
+                </Typography>
+
+              <Typography variant="body2">
               <p>{post.postText}</p>
-            </div>
+              <p>{post.category}</p>
+              
+              <p>{post.time}</p>
+              <p className="float-end">{post.contact}</p>
+             
+              </Typography>
+            </CardContent>
+            <CardActions>
             <Link
-              className="btn btn-primary btn-block btn-squared"
+              className="btn btn-primary "
               to={`/posts/${post._id}`}
             >
-              Join the discussion on this post.
+              Learn More
             </Link>
-          </div>
-        ))}
-      ;
+            </CardActions>
+          </Card>
+        </Grid>     
+      </Grid>
+      ))};
+      
     </div>
   );
 };

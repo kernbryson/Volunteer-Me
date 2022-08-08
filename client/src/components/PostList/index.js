@@ -42,7 +42,7 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
             </div>
             <Link
               className="btn btn-primary btn-block btn-squared"
-              to={`/posts/${posts._id}`}
+              to={`/posts/${post._id}`}
             >
               Join the discussion on this post.
             </Link>

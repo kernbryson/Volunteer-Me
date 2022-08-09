@@ -20,6 +20,7 @@ const PostForm = () => {
     contact: "",
     time: "",
     volunteerDate: "",
+    title:"",
   });
 
   const [characterCount, setCharacterCount] = useState(0);
@@ -57,6 +58,7 @@ const PostForm = () => {
           contact: postForm.contact,
           time: postForm.time,
           volunteerDate: postForm.volunteerDate,
+          title: postForm.title
         },
       });
       setPostForm({
@@ -65,6 +67,7 @@ const PostForm = () => {
         contact: "",
         time: "",
         volunteerDat: "",
+        title: "",
       });
     } catch (err) {
       console.error(err);
@@ -84,18 +87,22 @@ const PostForm = () => {
 
       {Auth.loggedIn() ? (
         <>
-          <p
-            className={`m-0 ${
-              characterCount === 700 || error ? "text-danger" : ""
-            }`}
-          >
-            Character Count: {characterCount}/700
-          </p>
+         
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
+            className="flex-row  justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-9">
+            <input
+                  className="form-input w-15"
+                  type="search"
+                  style={styles.cardStyles}
+                  placeholder="title"
+                  aria-label="Search"
+                  onChange={handleChange}
+                  name="title"
+                  value={postForm.title}
+                ></input>
               <textarea
                 name="postText"
                 placeholder="Give a little information about the volunteer work"
@@ -104,7 +111,7 @@ const PostForm = () => {
                 style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
               ></textarea>
-              <div class="row">
+              <div className="row">
                 <select
                   style={styles.cardStyles}
                   className="form-select w-10"

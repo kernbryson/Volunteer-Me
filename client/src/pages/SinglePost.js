@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Link } from "@mui/material";
 
 import Card from "@mui/material/Card";
@@ -20,6 +20,12 @@ import { QUERY_SINGLE_POST } from "../utils/queries";
 const SinglePost = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { postId } = useParams();
+  const [buttonText, setButtonText] = useState("I want to go!");
+
+
+  function handleClick() {
+    setButtonText("Going!");
+  }
 
   const { loading, data } = useQuery(QUERY_SINGLE_POST, {
     // pass URL parameter
@@ -28,9 +34,9 @@ const SinglePost = () => {
   console.log(data);
   const post = data?.post || {};
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
   return (
     <div>
       <Grid container spacing={3}>
@@ -38,43 +44,35 @@ const SinglePost = () => {
           <Card sx={{ minWidth: 275 }}>
             <CardHeader title={post.postText} />
             <CardContent>
-              <Typography variant="h5">
-                Location
-              </Typography>
+              <Typography variant="h5">Location</Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.location}
+                {post.location}
               </Typography>
-              <Typography variant="h5">
-                Category
-              </Typography>
+              <Typography variant="h5">Category</Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.category}
+                {post.category}
               </Typography>
 
-              <Typography variant="h5">
-                Time of the event
-              </Typography>
+              <Typography variant="h5">Time of the event</Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.time}
+                {post.time}
               </Typography>
 
-              <Typography variant="h5">
-                Contact Information
-              </Typography>
+              <Typography variant="h5">Contact Information</Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.contact}
+                {post.contact}
               </Typography>
-              <Typography variant="h5">
-                Date of the event
-              </Typography>
+              <Typography variant="h5">Date of the event</Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.volunteerDate}
-               </Typography>
+                {post.volunteerDate}
+              </Typography>
             </CardContent>
             <CardActions>
-              <Link href="/">
-                <Button variant="contained" size="large">Donate</Button>
-              </Link>
+              
+                <Button variant="contained" size="large" onClick={handleClick}>
+                  {buttonText}
+                </Button>
+            
             </CardActions>
           </Card>
         </Grid>

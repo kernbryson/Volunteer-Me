@@ -26,6 +26,12 @@ const userSchema = new Schema({
       ref: 'Post',
     },
   ],
+  going: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Post',
+    },
+  ]
 
 });
 

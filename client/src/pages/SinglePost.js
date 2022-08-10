@@ -16,15 +16,18 @@ import CommentList from "../components/CommentList";
 import CommentForm from "../components/CommentForm";
 
 import { QUERY_SINGLE_POST } from "../utils/queries";
+import RsvpForm from "../components/RSVPForm";
 
 const SinglePost = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { postId } = useParams();
   const [buttonText, setButtonText] = useState("I want to go!");
-
+  const goingToArray = [];
 
   function handleClick() {
     setButtonText("Going!");
+    goingToArray.push(post);
+    console.log(goingToArray);
   }
 
   const { loading, data } = useQuery(QUERY_SINGLE_POST, {
@@ -68,11 +71,10 @@ const SinglePost = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              
-                <Button variant="contained" size="large" onClick={handleClick}>
-                  {buttonText}
-                </Button>
-            
+              <Button variant="contained" size="large" onClick={handleClick}>
+                {buttonText}
+              </Button>
+              <RsvpForm/>
             </CardActions>
           </Card>
         </Grid>

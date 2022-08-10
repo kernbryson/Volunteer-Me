@@ -21,13 +21,26 @@ body {
   margin: 0;
 }
 
+.homepadding {
+padding-top: 25px
+}
+
+.homecenter {
+  text-align: center;
+  /* font-family: "monospace";
+  color: #2E3B55; */
+}
+
+.centerbtn {
+  justify-content: center;
+}
+
 /**
  * Render the `main` element consistently in IE.
  */
 main {
   display: block;
 }
-
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -369,9 +382,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'JetBrains Mono', monospace;
+  /* font-family: 'JetBrains Mono', monospace;
   margin: 0 0 0.5rem;
-  line-height: 1.25;
+  line-height: 1.25; */
 }
 
 h1 {
@@ -919,6 +932,19 @@ a:hover {
 }
 
 /* BACKGROUND UTILS */
+.card-bg {
+  background-color: #dad7cd !important;
+}
+
+.cardheader-bg {
+  background-color: #2E3B55 !important;
+  color: white
+}
+
+.bg-commentlist {
+  background-color: #344e41 !important;
+}
+
 .bg-primary {
   background-color: #2d3e50 !important;
 }
@@ -960,6 +986,11 @@ a:hover {
 }
 
 /* DISPLAY */
+
+.flexie {
+  display: flex;  
+  flex-wrap: wrap;
+}
 .display-none {
   display: none !important;
 }
@@ -1172,7 +1203,7 @@ form [type='radio'] {
 
 label form [type='checkbox'],
 label form [type='radio'] {
-  display: inline-block;
+  display: inline;
 }
 
 .container {
@@ -1180,6 +1211,7 @@ label form [type='radio'] {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  /* display: flex; */
 }
 
 .container.container-fluid {

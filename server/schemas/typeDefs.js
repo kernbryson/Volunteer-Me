@@ -27,11 +27,13 @@ const typeDefs = gql`
     location: String
     time: String
     contact: String
+    title: String
+    rsvps: [Rsvp]
   }
 
   type Rsvp {
     _id: ID
-    post: Post
+    posts: [Post]
   }
 
   type Comment {
@@ -51,6 +53,7 @@ const typeDefs = gql`
     user(username: String!): User
     posts(username: String): [Post]
     post(postId: ID!): Post
+    rsvp(_id: ID!): Rsvp
     me: User
   }
 
@@ -63,11 +66,13 @@ const typeDefs = gql`
       contact: String!
       time: String!
       volunteerDate: String!
+      title: String!
     ): Post
+    addGoingTo(postId: ID!, goingTo: Boolean): Rsvp
     addComment(postId: ID!, commentText: String!): Post
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post
-    addRSVP(cartID: ID!, commentId: ID!): Post
+    addRsvp(posts: [ID]!): Rsvp
     removeRSVP(cartID: ID!, commentId: ID!): Post
   }
 `;

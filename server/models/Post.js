@@ -6,7 +6,7 @@ const postSchema = new Schema({
     type: String,
     required: "You need to leave a post!",
     minlength: 1,
-    maxlength: 280,
+    maxlength: 700,
     trim: true,
   },
   postAuthor: {
@@ -31,6 +31,9 @@ const postSchema = new Schema({
     type: String,
    
   },
+  title:{
+    type: String,
+  },
   category: {
     type: Schema.Types.ObjectId,
     ref: "Category",
@@ -47,7 +50,7 @@ const postSchema = new Schema({
         type: String,
         required: true,
         minlength: 1,
-        maxlength: 280,
+        maxlength: 300,
       },
       commentAuthor: {
         type: String,

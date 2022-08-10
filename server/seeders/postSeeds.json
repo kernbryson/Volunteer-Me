@@ -1,42 +1,82 @@
 [
   {
-    "postText": "Baby's first post?",
-    "postAuthor": "Brian Kernighan"
+    "postText": "Tree Planting Day",
+    "postAuthor": "Marilyn Ramirez", 
+    "volunteerDate": "09/15/2022", 
+    "location": "Buford, GA", 
+    "time":"10am-2pm", 
+    "contact": "treeplanters@gmail.com" 
   },
   {
-    "postText": "Alphabet soup.",
-    "postAuthor": "Max Kanat-Alexander"
+    "postText": "Litter Cleanup Crew",
+    "postAuthor": "Laura Carter", 
+    "volunteerDate": "08/21/2022", 
+    "location": "Columbus, GA", 
+    "time":"7am-11am", 
+    "contact": "trashbegone@gmail.com"
   },
   {
-    "postText": "When you don't create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.",
-    "postAuthor": "Why The Lucky Stiff"
+    "postText": "Soup Kitchen Help",
+    "postAuthor": "Patricia Parker", 
+    "volunteerDate": "08/14/2022", 
+    "location": "Atlanta, GA", 
+    "time":"8am-12pm, 12pm-5pm", 
+    "contact": "helpinghandkitchen@gmail.com"
   },
   {
-    "postText": "I'm not a great programmer; I'm just a good programmer with great habits.",
-    "postAuthor": "Kent Beck"
+    "postText": "Hurricane Relief Rally",
+    "postAuthor": "Cynthia Coleman", 
+    "volunteerDate": "10/05/2022", 
+    "location": "Tallahassee, FL", 
+    "time":"6am-12pm, 12pm-6pm, 6pm-12am", 
+    "contact": "ccoleman@americanbluecross.org"
   },
   {
-    "postText": "Walking on water and developing software from a specification are easy if both are frozen.",
-    "postAuthor": "Edward V. Berard"
+    "postText": "Nursing Home Visitation",
+    "postAuthor": "Alan Torres",
+    "volunteerDate": "08/20/2022", 
+    "location": "Lithonia, GA", 
+    "time":"3pm-5pm", 
+    "contact": "555-555-5555"
   },
   {
-    "postText": "The most disastrous thing that you can ever learn is your first programming language.",
-    "postAuthor": "Alan Kay"
+    "postText": "Charity Fundraiser",
+    "postAuthor": "Anthony Clark", 
+    "volunteerDate": "09/16/2022", 
+    "location": "123 Charity Blvd SE, Marietta, GA 30152", 
+    "time":"3pm-9pm", 
+    "contact": "boosters@charityhelp.org"
   },
   {
-    "postText": "The most important property of a program is whether it accomplishes the intention of its user.",
-    "postAuthor": "C.A.R. Hoare"
+    "postText": "Canned Food Drive",
+    "postAuthor": "Samuel Moore", 
+    "volunteerDate": "11/01/2022", 
+    "location": "Salem County Library", 
+    "time":"9am-5pm", 
+    "contact": "123-456-7890"
   },
   {
-    "postText": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
-    "postAuthor": "David Thomas"
+    "postText": "Recycling Drive",
+    "postAuthor": "Amy Kelly", 
+    "volunteerDate": "10/03/2022", 
+    "location": "Maple County Square", 
+    "time":"8am-5pm", 
+    "contact": "amyk@recycling.com"
   },
   {
-    "postText": "If you optimize everything, you will always be unhappy.",
-    "postAuthor": "Donald Knuth"
+    "postText": "Blood Drive Auxillary Help",
+    "postAuthor": "Jeffery Miles", 
+    "volunteerDate": "08/14/2022", 
+    "location": "Peachtree City, GA", 
+    "time":"10am-3pm", 
+    "contact": "volunteer@bloodbank.org"
   },
   {
-    "postText": "It's not a bug; it's an undocumented feature.",
-    "postAuthor": "Lernantino"
+    "postText": "5k Run for Cancer",
+    "postAuthor": "Jim Matthews", 
+    "volunteerDate": "11/11/2022", 
+    "location": "Atlanta, GA", 
+    "time":"7am-2pm", 
+    "contact": "runforcancer@gmail.com"
   }
 ]

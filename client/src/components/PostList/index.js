@@ -73,6 +73,7 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
                 </CardActions>
               </Card>
             </Grid>
+
           ))}
         ;
       </Grid>

@@ -26,6 +26,8 @@ export const QUERY_POSTS = gql`
       contact
       time
       volunteerDate
+      title
+      rsvps
     }
   }
 `;
@@ -39,6 +41,7 @@ export const QUERY_SINGLE_POST = gql`
       contact
       time
       volunteerDate
+      title
       postAuthor
       createdAt
       comments {

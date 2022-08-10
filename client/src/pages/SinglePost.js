@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Link } from "@mui/material";
 
 import Card from "@mui/material/Card";
@@ -16,10 +16,19 @@ import CommentList from "../components/CommentList";
 import CommentForm from "../components/CommentForm";
 
 import { QUERY_SINGLE_POST } from "../utils/queries";
+import RsvpForm from "../components/RSVPForm";
 
 const SinglePost = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { postId } = useParams();
+  const [buttonText, setButtonText] = useState("I want to go!");
+  const goingToArray = [];
+
+  function handleClick() {
+    setButtonText("Going!");
+    goingToArray.push(post);
+    console.log(goingToArray);
+  }
 
   const { loading, data } = useQuery(QUERY_SINGLE_POST, {
     // pass URL parameter
@@ -28,9 +37,9 @@ const SinglePost = () => {
   console.log(data);
   const post = data?.post || {};
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="homepadding">
       <Grid container spacing={3}>
@@ -38,6 +47,7 @@ const SinglePost = () => {
           <Card className="card-bg" sx={{ minWidth: 275 }}>
             <CardHeader className="cardheader-bg" title={post.postText} />
             <CardContent>
+
             <Typography variant="h6">
                 Description
               </Typography>
@@ -52,35 +62,40 @@ const SinglePost = () => {
               </Typography>
               <Typography variant="h6">
                 Category
+
               </Typography>
+              <Typography variant="h5">Category</Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.category}
+                {post.category}
               </Typography>
+
 
               <Typography variant="h6">
                 Time of the event
               </Typography>
+
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.time}
+                {post.time}
               </Typography>
+
 
               <Typography variant="h6">
                 Contact Information
               </Typography>
+
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.contact}
+                {post.contact}
               </Typography>
-              <Typography variant="h5">
-                Date of the event
-              </Typography>
+              <Typography variant="h5">Date of the event</Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.volunteerDate}
-               </Typography>
+                {post.volunteerDate}
+              </Typography>
             </CardContent>
             <CardActions>
-              <Link href="/">
-                <Button variant="contained" size="large">Donate</Button>
-              </Link>
+              <Button variant="contained" size="large" onClick={handleClick}>
+                {buttonText}
+              </Button>
+              <RsvpForm/>
             </CardActions>
           </Card>
         </Grid>

@@ -27,7 +27,6 @@ export const QUERY_POSTS = gql`
       time
       volunteerDate
       title
-      rsvps
     }
   }
 `;

@@ -18,6 +18,16 @@ const resolvers = {
       console.log(Post.findOne({ _id: postId }));
       return Post.findOne({ _id: postId });
     },
+    rsvp: async (parent, {_id}, context) => {
+      if(context.user){
+        const user = await User.findById(context.user._id).populate({
+          path: 'rsvps.posts',
+        });
+
+        return user.rsvps.id(_id);
+      }
+      throw new AuthenticationError('Not logged in');
+    },
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id }).populate("posts");
@@ -51,7 +61,7 @@ const resolvers = {
     },
     addPost: async (
       parent,
-      { postText, location, contact, time, volunteerDate },
+      { postText, location, contact, time, volunteerDate, title  },
       context
     ) => {
       if (context.user) {
@@ -61,6 +71,7 @@ const resolvers = {
           contact,
           time,
           volunteerDate,
+          title,
           postAuthor: context.user.username,
         });
 
@@ -123,43 +134,17 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    addRSVP: async (parent, { postText }, context) => {
+    addRsvp: async (parent, { posts }, context) => {
+      console.log(context);
       if (context.user) {
-        const cart = await Rsvp.create({
-          postText,
-          icon,
-          volunteerDate,
-          location,
-          time,
-          contact,
-          category,
-          postAuthor: context.user.username,
-        });
+        const rsvp = new Rsvp({ posts });
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { carts: cart._id } }
-        );
+        await User.findByIdAndUpdate(context.user._id, { $push: { rsvps: rsvp } });
 
-        return cart;
+        return rsvp;
       }
-      throw new AuthenticationError("Login required.");
-    },
-    removeRSVP: async (parent, { postId }, context) => {
-      if (context.user) {
-        const cart = await Rsvp.findOneAndDelete({
-          _id: cartId,
-          postAuthor: context.user.username,
-        });
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { carts: cart._id } }
-        );
-
-        return cart;
-      }
-      throw new AuthenticationError("Login required.");
+      throw new AuthenticationError('Not logged in');
     },
   },
 };

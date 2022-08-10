@@ -24,6 +24,28 @@ export const ADD_USER = gql`
   }
 `;
 
+export const ADD_RSVP = gql`
+mutation addRsvp($posts: [ID]!) {
+  addRsvp(posts: $posts) {
+    posts {
+      _id
+      postText
+      postAuthor
+      location
+      contact
+      time
+      volunteerDate
+      title
+      createdAt
+      comments {
+        _id
+        commentText
+      }
+    }
+  }
+}
+`;
+
 export const ADD_POST = gql`
   mutation addPost(
     $postText: String!
@@ -31,6 +53,7 @@ export const ADD_POST = gql`
     $contact: String!
     $time: String!
     $volunteerDate: String!
+    $title: String!
   ) {
     addPost(
       postText: $postText
@@ -38,6 +61,7 @@ export const ADD_POST = gql`
       contact: $contact
       time: $time
       volunteerDate: $volunteerDate
+      title: $title
     ) {
       _id
       postText
@@ -46,6 +70,7 @@ export const ADD_POST = gql`
       contact
       time
       volunteerDate
+      title
       createdAt
       comments {
         _id

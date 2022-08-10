@@ -21,9 +21,19 @@ body {
   margin: 0;
 }
 
-/* main div {
-  display: inline-flex;
-} */
+.homepadding {
+padding-top: 25px
+}
+
+.homecenter {
+  text-align: center;
+  /* font-family: "monospace";
+  color: #2E3B55; */
+}
+
+.centerbtn {
+  justify-content: center;
+}
 
 /**
  * Render the `main` element consistently in IE.
@@ -922,6 +932,15 @@ a:hover {
 }
 
 /* BACKGROUND UTILS */
+.card-bg {
+  background-color: #dad7cd !important;
+}
+
+.cardheader-bg {
+  background-color: #2E3B55 !important;
+  color: white
+}
+
 .bg-commentlist {
   background-color: #344e41 !important;
 }

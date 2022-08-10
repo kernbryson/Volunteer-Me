@@ -32,33 +32,39 @@ const SinglePost = () => {
   //   return <div>Loading...</div>;
   // }
   return (
-    <div>
+    <div className="homepadding">
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
-          <Card sx={{ minWidth: 275 }}>
-            <CardHeader title={post.postText} />
+          <Card className="card-bg" sx={{ minWidth: 275 }}>
+            <CardHeader className="cardheader-bg" title={post.postText} />
             <CardContent>
-              <Typography variant="h5">
+            <Typography variant="h6">
+                Description
+              </Typography>
+              <Typography sx={{ mb: 1.5 }} color="text.secondary">
+              {post.postText}
+              </Typography>
+              <Typography variant="h6">
                 Location
               </Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
               {post.location}
               </Typography>
-              <Typography variant="h5">
+              <Typography variant="h6">
                 Category
               </Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
               {post.category}
               </Typography>
 
-              <Typography variant="h5">
+              <Typography variant="h6">
                 Time of the event
               </Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
               {post.time}
               </Typography>
 
-              <Typography variant="h5">
+              <Typography variant="h6">
                 Contact Information
               </Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">

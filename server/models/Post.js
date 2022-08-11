@@ -35,8 +35,7 @@ const postSchema = new Schema({
     type: String,
   },
   category: {
-    type: Schema.Types.ObjectId,
-    ref: "Category",
+    type: String,
    
   },
   createdAt: {

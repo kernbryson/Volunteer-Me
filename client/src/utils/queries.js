@@ -27,10 +27,18 @@ export const QUERY_POSTS = gql`
       time
       volunteerDate
       title
+      category
     }
   }
 `;
-
+export const QUERY_CATEGORIES = gql`
+  {
+    categories {
+      _id
+      name
+    }
+  }
+`;
 export const QUERY_SINGLE_POST = gql`
   query getSinglePost($postId: ID!) {
     post(postId: $postId) {
@@ -41,6 +49,7 @@ export const QUERY_SINGLE_POST = gql`
       time
       volunteerDate
       title
+      category
       postAuthor
       createdAt
       comments {

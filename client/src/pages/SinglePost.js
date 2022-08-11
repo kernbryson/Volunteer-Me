@@ -24,6 +24,13 @@ const SinglePost = () => {
   const [buttonText, setButtonText] = useState("I want to go!");
   const goingToArray = [];
 
+  const styles={
+    pics:{
+      width:"350px",
+      height:"270px",
+    },
+
+  }
   function handleClick() {
     setButtonText("Going!");
     goingToArray.push(post);
@@ -41,47 +48,34 @@ const SinglePost = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="homepadding">
+    <div className="p-5">
       <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
-          <Card className="card-bg" sx={{ minWidth: 275 }}>
-            <CardHeader className="cardheader-bg" title={post.postText} />
+        <Grid item xs={12} md={12}>
+          <Card className="card-bg" sx={{ minWidth: 600 }}>
+            <CardHeader className="cardheader-bg" title={post.title} />
             <CardContent>
-
-            <Typography variant="h6">
-                Description
-              </Typography>
+              <Typography variant="h5">Description</Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.postText}
+                {post.postText}
               </Typography>
-              <Typography variant="h6">
-                Location
-              </Typography>
+              <Typography variant="h5">Location</Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.location}
+                {post.location}
               </Typography>
-              <Typography variant="h6">
-                Category
-
-              </Typography>
+              <img className="float-end" style={styles.pics} alt="test"  src={require(`../components/images/${post.category}.jpg`).default} />
               <Typography variant="h5">Category</Typography>
+
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
                 {post.category}
               </Typography>
 
-
-              <Typography variant="h6">
-                Time of the event
-              </Typography>
+              <Typography variant="h5">Time of the event</Typography>
 
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
                 {post.time}
               </Typography>
 
-
-              <Typography variant="h6">
-                Contact Information
-              </Typography>
+              <Typography variant="h5">Contact Information</Typography>
 
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
                 {post.contact}
@@ -95,11 +89,11 @@ const SinglePost = () => {
               <Button variant="contained" size="large" onClick={handleClick}>
                 {buttonText}
               </Button>
-              <RsvpForm/>
+  
             </CardActions>
           </Card>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={12} className="float-end">
           <div className="my-2">
             <div className="my-2">
               <CommentList comments={post.comments} />

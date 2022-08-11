@@ -8,13 +8,25 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { bgcolor } from "@mui/system";
+const styles={
+  pics:{
+    width:"250px",
+    height:"170px",
+    justifyContent:"center",
+    alignItems:"center",
+    marginLeft:"2.5vw"
+  },
+  button:{
+    width:"20vw"
+  }
+}
 
 const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;
   }
   return (
-    <div className="flex homepadding">
+    <div className="flex homepadding ">
       <h2 className="homecenter">Your Place for Volunteer Activities</h2>
       <h4>Current Activity Listings:</h4>
       <Grid container spacing={3}>
@@ -23,9 +35,9 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
             // <div key={post._id}>
 
             <Grid item xs={12} md={6} lg={4}>
-              <Card className="card-bg" sx={{ minWidth: 275, minHeight: 350 }}>
+              <Card className="card-bg " sx={{ minWidth: 275, minHeight: 400 }}>
                 <CardHeader
-                  title={post.postText}
+                  title={post.title}
                   titleTypographyProps={{
                     fontSize: 20,
                     mb: 0,
@@ -41,32 +53,20 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
                   <Typography sx={{ mb: 1.5 }} color="text.secondary">
                     {post.location}
                   </Typography>
+                
                   <Typography variant="h6">Date of the event</Typography>
                   <Typography sx={{ mb: 1.5 }} color="text.secondary">
                     {post.volunteerDate}
                   </Typography>
-
-
-                  {/* <Typography variant="h6">Time of the event</Typography>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    {post.time}
+                  <Typography className="justify-content-center">
+                  <img alt="test" style={styles.pics} src={require(`../images/${post.category}.jpg`).default} />
                   </Typography>
 
-                  <Typography variant="h6">Contact Information</Typography>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    {post.contact}
-                  </Typography> */}
                 </CardContent>
 
-                {/* <CardContent>
-                  <Typography variant="body2">
-                    <p>{post.postText}</p>
-                    <p>{post.category}</p>
-                    <p>Time: {post.time}</p>
-                    <p>Contact info: {post.contact}</p>
-                  </Typography>
-                </CardContent> */}
-                <CardActions className="centerbtn">
+          
+                <CardActions className="justify-content-center" >
+                  
                   <Link className="btn btn-primary " to={`/posts/${post._id}`}>
                     Learn More
                   </Link>

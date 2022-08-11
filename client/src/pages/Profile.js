@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 
 import PostForm from '../components/PostForm';
 import PostList from '../components/PostList';
+import CondPostList from '../components/CondPostList';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
@@ -44,7 +45,7 @@ const Profile = () => {
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
-          <PostList
+          <CondPostList
             posts={user.posts}
             title={`${user.username}'s posts...`}
             showTitle={false}

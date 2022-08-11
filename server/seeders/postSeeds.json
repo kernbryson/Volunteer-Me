@@ -1,83 +1,103 @@
 [
   {
-    "postText": "Tree Planting Day",
+    "title": "Tree Planting Day",
     "postAuthor": "Marilyn Ramirez", 
     "volunteerDate": "09/15/2022", 
     "location": "Buford, GA", 
     "time":"10am-2pm", 
-    "contact": "treeplanters@gmail.com" 
+    "contact": "treeplanters@gmail.com",
+    "category":"Homeless",
+    "postText":"some text"
   },
   {
-    "postText": "Litter Cleanup Crew",
+    "title": "Litter Cleanup Crew",
     "postAuthor": "Laura Carter", 
     "volunteerDate": "08/21/2022", 
     "location": "Columbus, GA", 
     "time":"7am-11am", 
-    "contact": "trashbegone@gmail.com"
+    "contact": "trashbegone@gmail.com",
+    "category":"Environmental",
+    "postText":"some text"
   },
   {
-    "postText": "Soup Kitchen Help",
+    "title": "Soup Kitchen Help",
     "postAuthor": "Patricia Parker", 
     "volunteerDate": "08/14/2022", 
     "location": "Atlanta, GA", 
     "time":"8am-12pm, 12pm-5pm", 
-    "contact": "helpinghandkitchen@gmail.com"
+    "contact": "helpinghandkitchen@gmail.com",
+    "category":"Animal Shelter",
+    "postText":"some text"
 
   },
   {
-    "postText": "Hurricane Relief Rally",
+    "title": "Hurricane Relief Rally",
     "postAuthor": "Cynthia Coleman", 
     "volunteerDate": "10/05/2022", 
     "location": "Tallahassee, FL", 
     "time":"6am-12pm, 12pm-6pm, 6pm-12am", 
-    "contact": "ccoleman@americanbluecross.org"
+    "contact": "ccoleman@americanbluecross.org",
+    "category":"Community Development",
+    "postText":"some text"
   },
   {
-    "postText": "Nursing Home Visitation",
+    "title": "Nursing Home Visitation",
     "postAuthor": "Alan Torres",
     "volunteerDate": "08/20/2022", 
     "location": "Lithonia, GA", 
     "time":"3pm-5pm", 
-    "contact": "555-555-5555"
+    "contact": "555-555-5555",
+    "category":"Education",
+    "postText":"some text"
   },
   {
-    "postText": "Charity Fundraiser",
+    "title": "Charity Fundraiser",
     "postAuthor": "Anthony Clark", 
     "volunteerDate": "09/16/2022", 
     "location": "123 Charity Blvd SE, Marietta, GA 30152", 
     "time":"3pm-9pm", 
-    "contact": "boosters@charityhelp.org"
+    "contact": "boosters@charityhelp.org",
+    "category":"Health",
+    "postText":"some text"
   },
   {
-    "postText": "Canned Food Drive",
+    "title": "Canned Food Drive",
     "postAuthor": "Samuel Moore", 
     "volunteerDate": "11/01/2022", 
     "location": "Salem County Library", 
     "time":"9am-5pm", 
-    "contact": "123-456-7890"
+    "contact": "123-456-7890",
+    "category":"Horticulture",
+    "postText":"some text"
   },
   {
-    "postText": "Recycling Drive",
+    "title": "Recycling Drive",
     "postAuthor": "Amy Kelly", 
     "volunteerDate": "10/03/2022", 
     "location": "Maple County Square", 
     "time":"8am-5pm", 
-    "contact": "amyk@recycling.com"
+    "contact": "amyk@recycling.com",
+    "category":"Environmental",
+    "postText":"some text"
   },
   {
-    "postText": "Blood Drive Auxillary Help",
+    "title": "Blood Drive Auxillary Help",
     "postAuthor": "Jeffery Miles", 
     "volunteerDate": "08/14/2022", 
     "location": "Peachtree City, GA", 
     "time":"10am-3pm", 
-    "contact": "volunteer@bloodbank.org"
+    "contact": "volunteer@bloodbank.org",
+    "category":"Community Development",
+    "postText":"some text"
   },
   {
-    "postText": "5k Run for Cancer",
+    "title": "5k Run for Cancer",
     "postAuthor": "Jim Matthews", 
     "volunteerDate": "11/11/2022", 
     "location": "Atlanta, GA", 
     "time":"7am-2pm", 
-    "contact": "runforcancer@gmail.com"
+    "contact": "runforcancer@gmail.com",
+    "category":"Horticulture",
+    "postText":"some text"
   }
 ]

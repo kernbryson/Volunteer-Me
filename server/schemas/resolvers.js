@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Post } = require("../models");
+const { User, Post, Category } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -18,16 +18,24 @@ const resolvers = {
       console.log(Post.findOne({ _id: postId }));
       return Post.findOne({ _id: postId });
     },
-    rsvp: async (parent, {_id}, context) => {
-      if(context.user){
-        const user = await User.findById(context.user._id).populate({
-          path: 'rsvps.posts',
-        });
-
-        return user.rsvps.id(_id);
-      }
-      throw new AuthenticationError('Not logged in');
-    },
+      // categories: async () => {
+      //   return await Category.find();
+      // },
+      posts: async (parent, { category, name }) => {
+        const params = {};
+  
+        if (category) {
+          params.category = category;
+        }
+  
+        if (name) {
+          params.name = {
+            $regex: name
+          };
+        }
+  
+        return await Post.find(params).populate('category');
+      },
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id }).populate("posts");
@@ -61,7 +69,7 @@ const resolvers = {
     },
     addPost: async (
       parent,
-      { postText, location, contact, time, volunteerDate, title  },
+      { postText, location, contact, time, volunteerDate, title, category  },
       context
     ) => {
       if (context.user) {
@@ -72,6 +80,7 @@ const resolvers = {
           time,
           volunteerDate,
           title,
+          category,
           postAuthor: context.user.username,
         });
 

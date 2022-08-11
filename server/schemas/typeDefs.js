@@ -10,10 +10,6 @@ const typeDefs = gql`
     rsvp: Rsvp
   }
 
-  type Category {
-    _id: ID
-    name: String
-  }
 
   type Post {
     _id: ID
@@ -21,14 +17,13 @@ const typeDefs = gql`
     postAuthor: String
     createdAt: String
     comments: [Comment]!
-    category: Category
+    category: String
     icon: String
     volunteerDate: String
     location: String
     time: String
     contact: String
     title: String
-    rsvps: [Rsvp]
   }
 
   type Rsvp {
@@ -51,7 +46,7 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(username: String!): User
-    posts(username: String): [Post]
+    posts(category: ID, name: String): [Post]
     post(postId: ID!): Post
     rsvp(_id: ID!): Rsvp
     me: User
@@ -67,6 +62,7 @@ const typeDefs = gql`
       time: String!
       volunteerDate: String!
       title: String!
+      category: String!
     ): Post
     addGoingTo(postId: ID!, goingTo: Boolean): Rsvp
     addComment(postId: ID!, commentText: String!): Post

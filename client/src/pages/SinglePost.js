@@ -45,43 +45,29 @@ const SinglePost = () => {
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
           <Card className="card-bg" sx={{ minWidth: 275 }}>
-            <CardHeader className="cardheader-bg" title={post.postText} />
+            <CardHeader className="cardheader-bg" title={post.title} />
             <CardContent>
-
-            <Typography variant="h6">
-                Description
-              </Typography>
+              <Typography variant="h6">Description</Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.postText}
+                {post.postText}
               </Typography>
-              <Typography variant="h6">
-                Location
-              </Typography>
+              <Typography variant="h6">Location</Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.location}
+                {post.location}
               </Typography>
-              <Typography variant="h6">
-                Category
+              <Typography variant="h6">Category</Typography>
 
-              </Typography>
-              <Typography variant="h5">Category</Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
                 {post.category}
               </Typography>
 
-
-              <Typography variant="h6">
-                Time of the event
-              </Typography>
+              <Typography variant="h6">Time of the event</Typography>
 
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
                 {post.time}
               </Typography>
 
-
-              <Typography variant="h6">
-                Contact Information
-              </Typography>
+              <Typography variant="h6">Contact Information</Typography>
 
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
                 {post.contact}
@@ -95,7 +81,7 @@ const SinglePost = () => {
               <Button variant="contained" size="large" onClick={handleClick}>
                 {buttonText}
               </Button>
-              <RsvpForm/>
+  
             </CardActions>
           </Card>
         </Grid>

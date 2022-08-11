@@ -20,7 +20,8 @@ const PostForm = () => {
     contact: "",
     time: "",
     volunteerDate: "",
-    title:"",
+    title: "",
+    category: "",
   });
 
   const [characterCount, setCharacterCount] = useState(0);
@@ -58,7 +59,8 @@ const PostForm = () => {
           contact: postForm.contact,
           time: postForm.time,
           volunteerDate: postForm.volunteerDate,
-          title: postForm.title
+          title: postForm.title,
+          category: postForm.category,
         },
       });
       setPostForm({
@@ -68,6 +70,7 @@ const PostForm = () => {
         time: "",
         volunteerDat: "",
         title: "",
+        category: "",
       });
     } catch (err) {
       console.error(err);
@@ -87,22 +90,21 @@ const PostForm = () => {
 
       {Auth.loggedIn() ? (
         <>
-         
           <form
             className="flex-row  justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12 col-lg-9">
-            <input
-                  className="form-input w-15"
-                  type="search"
-                  style={styles.cardStyles}
-                  placeholder="title"
-                  aria-label="Search"
-                  onChange={handleChange}
-                  name="title"
-                  value={postForm.title}
-                ></input>
+            <div className="col-12 col-lg-12">
+              <input
+                className="form-input w-100 "
+                type="search"
+                style={styles.cardStyles}
+                placeholder="title"
+                aria-label="Search"
+                onChange={handleChange}
+                name="title"
+                value={postForm.title}
+              ></input>
               <textarea
                 name="postText"
                 placeholder="Give a little information about the volunteer work"
@@ -112,18 +114,6 @@ const PostForm = () => {
                 onChange={handleChange}
               ></textarea>
               <div className="row">
-                <select
-                  style={styles.cardStyles}
-                  className="form-select w-10"
-                  id="floatingSelect"
-                  aria-label="Floating label select example"
-                >
-                  <option defaultValue>Category</option>
-                  <option value="1">Homeless</option>
-                  <option value="2">Environmental</option>
-                  <option value="3">Animal Shelter</option>
-                </select>
-
                 <input
                   className="form-input w-15"
                   type="search"
@@ -164,6 +154,25 @@ const PostForm = () => {
                   name="contact"
                   value={postForm.contact}
                 ></input>
+                <select
+                  style={styles.cardStyles}
+                  className="form-select w-10"
+                  id="floatingSelect"
+                  onChange={handleChange}
+                  name="category"
+                  aria-label="Floating label select example"
+                >
+                  <option value="Homeless">Homeless</option>
+                  <option value="Environmental">Environmental</option>
+                  <option value="Animal Shelter">Animal Shelter</option>
+                  <option value="Community Development">
+                    Community Development
+                  </option>
+                  <option value="Education">Education</option>
+                  <option value="Health">Health</option>
+                  <option value="Horticulture">Horticulture</option>
+                  <option value="NA">NA</option>
+                </select>
               </div>
             </div>
 

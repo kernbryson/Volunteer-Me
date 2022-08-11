@@ -31,7 +31,7 @@ const CondPostList = ({ posts, title, showTitle = true, showUsername = true }) =
           posts.map((post) => (
             // <div key={post._id}>
 
-            <Grid item xs={12} md={6} lg={4}>
+            <Grid key={post._id}  item xs={12} md={6} lg={4}>
               <Card className="card-bg" sx={{ minWidth: 275, minHeight: 100 }}>
                 <CardHeader
                   title={post.title}

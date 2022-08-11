@@ -48,8 +48,6 @@ const Profile = () => {
           <CondPostList
             posts={user.posts}
             title={`${user.username}'s posts...`}
-            showTitle={false}
-            showUsername={false}
           />
         </div>
         {!userParam && (

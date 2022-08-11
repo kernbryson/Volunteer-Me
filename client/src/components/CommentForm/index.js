@@ -33,23 +33,19 @@ const CommentForm = ({ postId }) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'commentText' && value.length <= 700) {
+    if (name === 'commentText' ) {
       setCommentText(value);
-      setCharacterCount(value.length);
     }
   
   };
 
   return (
     <div>
-      <h4>What are your thoughts on this activity?</h4>
+      <h4>Do you have any questions about this activity?</h4>
 
       {Auth.loggedIn() ? (
         <>
           <p
-            className={`m-0 ${
-              characterCount === 700 || error ? 'text-danger' : ''
-            }`}
           >
             {error && <span className="ml-2">{error.message}</span>}
           </p>

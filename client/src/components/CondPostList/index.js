@@ -19,7 +19,9 @@ const styles={
 const CondPostList = ({ posts, title, showTitle = true, showUsername = true }) => {
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;
+    
   }
+  console.log(posts)
   return (
     <div className="flex homepadding">
       <h2 className="homecenter">Your Place for Volunteer Activities</h2>
@@ -42,7 +44,7 @@ const CondPostList = ({ posts, title, showTitle = true, showUsername = true }) =
         
                 <CardActions className="centerbtn">
                   <Link className="btn btn-primary " to={`/posts/${post._id}`}>
-                    Learn More
+                    View Post
                   </Link>
                 </CardActions>
               </Card>

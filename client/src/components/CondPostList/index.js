@@ -10,6 +10,7 @@ import { REMOVE_POST } from "../../utils/mutations";
 import { QUERY_POSTS, QUERY_ME } from "../../utils/queries";
 import { useMutation } from "@apollo/client";
 
+
 const CondPostList = ({
   posts,
   title,
@@ -61,6 +62,7 @@ const CondPostList = ({
     }
   };
 
+
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;
   }
@@ -72,7 +74,9 @@ const CondPostList = ({
       <Grid container spacing={3}>
         {posts &&
           posts.map((post) => (
+
             <Grid key={post._id} item xs={12} md={6} lg={4}>
+
               <Card className="card-bg" sx={{ minWidth: 275, minHeight: 100 }}>
                 <CardHeader
                   title={post.title}
@@ -88,12 +92,14 @@ const CondPostList = ({
                     View Post
                   </Link>
                 </CardActions>
+
                 <form onSubmit={(event)=>handleFormSubmit(event, post._id)}>
                   <button
                     name="postId"
                     onChange={handleChange}
                     value={post.id}
                   ></button>
+
                 </form>
               </Card>
             </Grid>

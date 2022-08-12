@@ -47,7 +47,19 @@ export const ADD_RSVP = gql`
 `;
 export const REMOVE_POST = gql`
   mutation removePost($postId: ID!) {
-    removePost(postId: $postId)
+    removePost(postId: $postId) {
+      _id
+    }
+  }
+`;
+
+export const ADD_VOLUNTEER = gql`
+  mutation addVolunteer($postId: ID!) {
+    addVolunteer(postId: $postId) {
+      _id
+      title
+      volunteers
+    }
   }
 `;
 

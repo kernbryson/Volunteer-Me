@@ -10,7 +10,6 @@ const typeDefs = gql`
     rsvp: Rsvp
   }
 
-
   type Post {
     _id: ID
     postText: String
@@ -24,7 +23,9 @@ const typeDefs = gql`
     time: String
     contact: String
     title: String
+    volunteers: [User]
   }
+
 
   type Rsvp {
     _id: ID
@@ -54,6 +55,7 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
+    addVolunteer(postId: ID!): Post
     login(email: String!, password: String!): Auth
     addPost(
       postText: String!

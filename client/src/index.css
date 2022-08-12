@@ -1747,3 +1747,21 @@ justify-content: center;
     align-content: center;
   }
 }
+@media screen and (max-width: 1200px) {
+ .createpost{
+  display: flex;
+  flex-direction: column;
+ 
+  
+ }
+ .formBox{
+ width: 50vw !important;
+ }
+ .cardmedia{
+  width: 80vw !important;
+  height: 70vh !important;
+ }
+ .picture{
+ display: none;
+ }
+}

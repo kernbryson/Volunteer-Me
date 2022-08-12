@@ -49,6 +49,7 @@ const Login = (props) => {
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
               <div className="card card-bg shadow-2-strong">
                 {data ? (
+
                   <p>
                     Success! You may now head{" "}
                     <Link to="/">back to the homepage.</Link>
@@ -93,6 +94,7 @@ const Login = (props) => {
                       type="submit"
                     >
                       Log In
+
                     </button>
                   </form>
                 )}

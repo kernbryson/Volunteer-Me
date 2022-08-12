@@ -24,6 +24,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 -This site can be found on github at [Volunteer-Me](https://github.com/kernbryson/Volunteer-Me.git)
 
 -After following the link to the github repository, be sure to clone this repo to your local machine. 
+
    {  
     ```
     git clone https://github.com/kernbryson/Volunteer-Me.git

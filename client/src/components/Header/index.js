@@ -6,7 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
+
 import Container from "@mui/material/Container";
 
 import Button from "@mui/material/Button";
@@ -75,7 +75,7 @@ const Header = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -186,6 +186,14 @@ const Header = () => {
                     sx={{ my: 2, color: "white", display: "block" }}
                   >
                     Create Activity
+                  </Button>
+                </Link>
+                <Link to="/me">
+                  <Button
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                  >
+                    View Profile
                   </Button>
                 </Link>
                 <Link to={logout}>

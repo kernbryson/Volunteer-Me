@@ -72,7 +72,6 @@ const Header = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-        
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -183,6 +182,14 @@ const Header = () => {
                     sx={{ my: 2, color: "white", display: "block" }}
                   >
                     Create Activity
+                  </Button>
+                </Link>
+                <Link to="/me">
+                  <Button
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                  >
+                    View Profile
                   </Button>
                 </Link>
                 <Link to={logout}>

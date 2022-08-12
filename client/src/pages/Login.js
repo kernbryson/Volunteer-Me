@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
@@ -41,13 +42,12 @@ const Login = (props) => {
   };
 
   return (
-
-    <div className="row row-cols-1 row-cols-lg-1 ">
-      <div className="col mb-4 py-4 ">
+    <div className="row row-cols-1 row-cols-lg-1">
+        <div className="col mb-4 py-4 ">
         <div className="container  h-100">
-          <div className="row d-flex justify-content-center  h-100">
-            <div className="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11">
-              <div className="card shadow-2-strong">
+          <div className="row d-flex justify-center  h-100">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div className="card card-bg shadow-2-strong">
                 {data ? (
 
                   <p>
@@ -90,10 +90,11 @@ const Login = (props) => {
                     </div>
 
                     <button
-                      className="btn btn-secondary btn-lg btn-block"
+                      className="btn btn-primary btn-lg btn-block"
                       type="submit"
                     >
-                      Sign In
+                      Log In
+
                     </button>
                   </form>
                 )}

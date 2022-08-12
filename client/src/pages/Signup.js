@@ -44,7 +44,7 @@ const Signup = () => {
         <div className="container  h-100">
           <div className="row d-flex justify-content-center  h-100">
             <div className="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11">
-              <div className="card shadow-2-strong">
+              <div className="card card-bg shadow-2-strong">
                 {data ? (
                   <p>
                     Success! You may now head{" "}
@@ -100,7 +100,7 @@ const Signup = () => {
                     </div>
 
                     <button
-                      className="btn btn-secondary btn-lg btn-block"
+                      className="btn btn-primary btn-lg btn-block"
                       type="submit"
                     >
                       Create your acccount

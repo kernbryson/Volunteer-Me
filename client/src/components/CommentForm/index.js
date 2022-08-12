@@ -5,7 +5,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_COMMENT } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
-
+let commentAuthor =""
 const CommentForm = ({ postId }) => {
   const [commentText, setCommentText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
@@ -38,6 +38,7 @@ const CommentForm = ({ postId }) => {
     }
   
   };
+
 
   return (
     <div>
@@ -82,4 +83,3 @@ const CommentForm = ({ postId }) => {
 };
 
 export default CommentForm;
-

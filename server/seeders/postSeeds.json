@@ -6,7 +6,7 @@
     "location": "Buford, GA", 
     "time":"10am-2pm", 
     "contact": "treeplanters@gmail.com",
-    "category":"Homeless",
+    "category":"Environmental",
     "postText":"some text"
   },
   {
@@ -26,7 +26,7 @@
     "location": "Atlanta, GA", 
     "time":"8am-12pm, 12pm-5pm", 
     "contact": "helpinghandkitchen@gmail.com",
-    "category":"Animal Shelter",
+    "category":"Homeless",
     "postText":"some text"
 
   },
@@ -47,7 +47,7 @@
     "location": "Lithonia, GA", 
     "time":"3pm-5pm", 
     "contact": "555-555-5555",
-    "category":"Education",
+    "category":"Health",
     "postText":"some text"
   },
   {
@@ -57,7 +57,7 @@
     "location": "123 Charity Blvd SE, Marietta, GA 30152", 
     "time":"3pm-9pm", 
     "contact": "boosters@charityhelp.org",
-    "category":"Health",
+    "category":"Environmental",
     "postText":"some text"
   },
   {
@@ -67,7 +67,7 @@
     "location": "Salem County Library", 
     "time":"9am-5pm", 
     "contact": "123-456-7890",
-    "category":"Horticulture",
+    "category":"Homeless",
     "postText":"some text"
   },
   {
@@ -87,7 +87,7 @@
     "location": "Peachtree City, GA", 
     "time":"10am-3pm", 
     "contact": "volunteer@bloodbank.org",
-    "category":"Community Development",
+    "category":"Health",
     "postText":"some text"
   },
   {
@@ -97,7 +97,7 @@
     "location": "Atlanta, GA", 
     "time":"7am-2pm", 
     "contact": "runforcancer@gmail.com",
-    "category":"Horticulture",
+    "category":"Health",
     "postText":"some text"
   }
 ]

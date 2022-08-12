@@ -85,18 +85,18 @@ const PostForm = () => {
   };
 
   return (
-    <div>
+    <div >
       <h3>Explain what kind of volunteer work you will be doing</h3>
 
       {Auth.loggedIn() ? (
         <>
           <form
-            className="flex-row  justify-space-between-md align-center"
+            className="flex-row  justify-space-between-md align-center justify-content-center"
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-12">
               <input
-                className="form-input w-100 "
+                className="form-input w-100"
                 type="search"
                 style={styles.cardStyles}
                 placeholder="title"
@@ -109,13 +109,13 @@ const PostForm = () => {
                 name="postText"
                 placeholder="Give a little information about the volunteer work"
                 value={postForm.postText}
-                className="form-input w-100"
+                className="form-input w-100 "
                 style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
               ></textarea>
-              <div className="row">
+              <div className="row createpost">
                 <input
-                  className="form-input w-15"
+                  className="form-input w-15 formBox"
                   type="search"
                   style={styles.cardStyles}
                   placeholder="location"
@@ -125,7 +125,7 @@ const PostForm = () => {
                   value={postForm.location}
                 ></input>
                 <input
-                  className="form-input w-15"
+                  className="form-input w-15 formBox"
                   type="search"
                   style={styles.cardStyles}
                   placeholder="Volunteer date"
@@ -135,7 +135,7 @@ const PostForm = () => {
                   value={postForm.volunteerDate}
                 ></input>
                 <input
-                  className="form-input w-15"
+                  className="form-input w-15 formBox"
                   type="search"
                   style={styles.cardStyles}
                   placeholder="time"
@@ -145,7 +145,7 @@ const PostForm = () => {
                   value={postForm.time}
                 ></input>
                 <input
-                  className="form-input w-15"
+                  className="form-input w-15 formBox"
                   type="search"
                   style={styles.cardStyles}
                   placeholder="Phone number "
@@ -156,7 +156,7 @@ const PostForm = () => {
                 ></input>
                 <select
                   style={styles.cardStyles}
-                  className="form-select w-10"
+                  className="form-select w-10 formBox"
                   id="floatingSelect"
                   onChange={handleChange}
                   name="category"

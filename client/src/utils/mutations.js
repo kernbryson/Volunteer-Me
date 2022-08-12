@@ -53,6 +53,16 @@ export const REMOVE_POST = gql`
   }
 `;
 
+export const ADD_VOLUNTEER = gql`
+  mutation addVolunteer($postId: ID!) {
+    addVolunteer(postId: $postId) {
+      _id
+      title
+      volunteers
+    }
+  }
+`;
+
 export const ADD_POST = gql`
   mutation addPost(
     $postText: String!

@@ -91,16 +91,17 @@ const CondPostList = ({
                   <Link className="btn btn-primary " to={`/posts/${post._id}`}>
                     View Post
                   </Link>
+                  
                 </CardActions>
-
-                <form onSubmit={(event)=>handleFormSubmit(event, post._id)}>
+                <form className="d-flex justify-content-center p-2" onSubmit={(event)=>handleFormSubmit(event, post._id)}>
                   <button
+                  className="btn btn-primary"
                     name="postId"
                     onChange={handleChange}
                     value={post.id}
-                  ></button>
-
+                  >Delete Activity</button>
                 </form>
+            
               </Card>
             </Grid>
           ))}

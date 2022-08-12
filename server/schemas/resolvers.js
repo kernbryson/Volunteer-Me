@@ -18,24 +18,24 @@ const resolvers = {
       console.log(Post.findOne({ _id: postId }));
       return Post.findOne({ _id: postId });
     },
-      // categories: async () => {
-      //   return await Category.find();
-      // },
-      posts: async (parent, { category, name }) => {
-        const params = {};
-  
-        if (category) {
-          params.category = category;
-        }
-  
-        if (name) {
-          params.name = {
-            $regex: name
-          };
-        }
-  
-        return await Post.find(params).populate('category');
-      },
+    // categories: async () => {
+    //   return await Category.find();
+    // },
+    posts: async (parent, { category, name }) => {
+      const params = {};
+
+      if (category) {
+        params.category = category;
+      }
+
+      if (name) {
+        params.name = {
+          $regex: name,
+        };
+      }
+
+      return await Post.find(params).populate("category");
+    },
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id }).populate("posts");
@@ -67,9 +67,18 @@ const resolvers = {
 
       return { token, user };
     },
+    addVolunteer: async (parent, { postId }, context) => {
+      if (context.user) {
+        const post = await Post.findOneAndUpdate(
+          { _id: postId },
+          { $addToSet: { volunteers: context.user._id } }
+        );
+        return post;
+      }
+    },
     addPost: async (
       parent,
-      { postText, location, contact, time, volunteerDate, title, category  },
+      { postText, location, contact, time, volunteerDate, title, category },
       context
     ) => {
       if (context.user) {
@@ -82,6 +91,7 @@ const resolvers = {
           title,
           category,
           postAuthor: context.user.username,
+          $addToSet: { volunteers: context.user._id },
         });
 
         await User.findOneAndUpdate(
@@ -148,12 +158,14 @@ const resolvers = {
       if (context.user) {
         const rsvp = new Rsvp({ posts });
 
-        await User.findByIdAndUpdate(context.user._id, { $push: { rsvps: rsvp } });
+        await User.findByIdAndUpdate(context.user._id, {
+          $push: { rsvps: rsvp },
+        });
 
         return rsvp;
       }
 
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError("Not logged in");
     },
   },
 };

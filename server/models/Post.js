@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Mongoose } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
 const postSchema = new Schema({
@@ -17,27 +17,27 @@ const postSchema = new Schema({
 
   volunteerDate: {
     type: String,
-  
   },
   location: {
     type: String,
-    
   },
   time: {
     type: String,
-   
   },
   contact: {
     type: String,
-   
   },
-  title:{
+  title: {
     type: String,
   },
   category: {
     type: String,
-   
   },
+  volunteers: [{
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  }
+  ],
   createdAt: {
     type: Date,
     default: Date.now,

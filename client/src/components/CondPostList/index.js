@@ -64,7 +64,7 @@ const CondPostList = ({
 
 
   if (!posts.length) {
-    return <h3>No Posts Yet</h3>;
+    return <h3>No Activities Yet</h3>;
   }
   console.log(posts);
   return (

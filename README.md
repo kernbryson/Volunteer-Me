@@ -1,5 +1,5 @@
 # Volunteer-Me
-
+https://volunteermereact.herokuapp.com/
 ## Description
 
 The purpose of this application is to provide a social based format to gather and support volunteer activities.
@@ -58,12 +58,20 @@ What are the steps required to install your project? Provide a step-by-step desc
 
     -Authorized users can also view their own profile as well as posts created by other 
 
+
+ ![alt text](/client/src/assets/images/volunteer-me-1.PNG)
+  ![alt text](/client/src/assets/images/volunteer-me-homepage.PNG)
+   ![alt text](/client/src/assets/images/volunteer-me-needsLogin.PNG)
+    ![alt text](/client/src/assets/images/volunteer-me-newEventAddedToHome.PNG)
+     ![alt text](/client/src/assets/images/volunteer-me-profile%26NewPost.PNG)
+      ![alt text](/client/src/assets/images/volunteer-me-readyToLogout.PNG)
+       ![alt text](/client/src/assets/images/volunteer-me-signup.PNG)
+        ![alt text](/client/src/assets/images/volunteer-me-viewPost%26AddComments.PNG)
+
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
 
+    
 ## Credits
 <a href = "https://github.com/kernbryson/Volunteer-Me/graphs/contributors">
 <img src = "https://contrib.rocks/image?repo = GitHub_kernbryson/repository_Volunteer-Me"/>
